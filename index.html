@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="synthwave">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NEON WAVES · Rádios do Mundo</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--a:#ff2bd6;--b:#00e5ff;--s1:#12002b;--s2:#4a0a6b;--sun1:#ffe14d;--sun2:#ff2bd6;--gr:#ff2bd6;--tx:#f5e9ff;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+[data-theme=backrooms]{--a:#e6d84a;--b:#b5a733;--s1:#3a3410;--s2:#7a6f26;--sun1:#fff6a0;--sun2:#d9c85a;--gr:#e6d84a}
+[data-theme=dreamcore]{--a:#ffb3f0;--b:#9fe3ff;--s1:#2b1d55;--s2:#c46bb5;--sun1:#fff2fb;--sun2:#ffb3f0;--gr:#c9a8ff}
+[data-theme=brasil]{--a:#ffdf00;--b:#19d35a;--s1:#002776;--s2:#008a3e;--sun1:#fff27a;--sun2:#ffdf00;--gr:#ffdf00}
+[data-theme=cyberpunk]{--a:#f3e600;--b:#00f0ff;--s1:#07000f;--s2:#4a0030;--sun1:#ff4d6d;--sun2:#ff003c;--gr:#00f0ff}
+[data-theme=goblincore]{--a:#a7d15a;--b:#e0a96d;--s1:#141f0f;--s2:#3f3018;--sun1:#e8d18a;--sun2:#a7d15a;--gr:#a7d15a}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--tx);font:16px/1.4 'Share Tech Mono',ui-monospace,monospace;background:linear-gradient(var(--s1),var(--s2) 62%,var(--s1))}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px)}
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.stars{position:absolute;inset:0 0 50%;background:radial-gradient(1px 1px at 12% 20%,#fff,transparent),radial-gradient(1px 1px at 38% 40%,#fff,transparent),radial-gradient(2px 2px at 63% 15%,#fff,transparent),radial-gradient(1px 1px at 82% 35%,#fff,transparent),radial-gradient(1px 1px at 92% 10%,#fff,transparent),radial-gradient(1px 1px at 25% 6%,#fff,transparent);animation:tw 4s ease-in-out infinite alternate}
+@keyframes tw{to{opacity:.35}}
+.sun{position:absolute;left:50%;bottom:34%;width:min(64vw,440px);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:linear-gradient(var(--sun1),var(--sun2));-webkit-mask:repeating-linear-gradient(#000 0 15px,transparent 15px 19px);mask:repeating-linear-gradient(#000 0 15px,transparent 15px 19px);filter:drop-shadow(0 0 40px var(--sun2));opacity:.85;animation:sm 6s linear infinite}
+@keyframes sm{to{-webkit-mask-position:0 19px;mask-position:0 19px}}
+.fl{position:absolute;left:-50%;width:200%;bottom:0;height:62%;transform:perspective(260px) rotateX(58deg);transform-origin:bottom;background:linear-gradient(var(--gr) 1px,transparent 1px) 0 0/100% 44px,linear-gradient(90deg,var(--gr) 1px,transparent 1px) 0 0/64px 100%;-webkit-mask:linear-gradient(to top,#000 35%,transparent);mask:linear-gradient(to top,#000 35%,transparent);opacity:.55;animation:mv 1.4s linear infinite}
+@keyframes mv{to{background-position:0 44px,0 0}}
+.w{position:relative;z-index:2;max-width:1180px;margin:auto;padding:24px 16px 150px}
+h1{margin:0;font:900 clamp(30px,8vw,64px) Orbitron,system-ui,sans-serif;letter-spacing:.1em;text-align:center;background:linear-gradient(var(--b),var(--a));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 14px var(--a));animation:fk 5s infinite}
+@keyframes fk{0%,92%,96%,100%{opacity:1}94%{opacity:.6}98%{opacity:.8}}
+header p{text-align:center;margin:4px 0 22px;color:var(--b);letter-spacing:.25em;text-transform:uppercase;font-size:12px}
+h2{margin:0 0 10px;font:500 13px Orbitron,system-ui,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--b)}
+h2 small{color:var(--a);letter-spacing:.1em;font-family:inherit;margin-left:8px}
+.p{background:rgba(10,0,30,.55);backdrop-filter:blur(8px);border:1px solid var(--a);border-radius:16px;padding:16px;box-shadow:0 0 24px -6px var(--a),inset 0 0 30px -18px var(--b);animation:in .7s both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.cols{display:grid;gap:18px;margin-top:18px}
+@media(min-width:900px){.cols{grid-template-columns:5fr 6fr;align-items:start}.globe{position:sticky;top:16px}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.chips button{font:inherit;font-size:13px;color:var(--tx);background:rgba(0,0,0,.35);border:1px solid var(--b);border-radius:99px;padding:6px 13px;cursor:pointer;text-transform:uppercase;letter-spacing:.06em;transition:.2s}
+.chips button:hover{box-shadow:0 0 12px var(--b);transform:translateY(-2px)}
+.chips button.on{background:var(--a);color:#000;border-color:var(--a);box-shadow:0 0 16px var(--a)}
+.ctl{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+input[type=search],select{flex:1 1 150px;font:inherit;color:var(--tx);background:rgba(0,0,0,.45);border:1px solid var(--b);border-radius:10px;padding:10px 12px;min-width:0}
+input:focus,select:focus{outline:none;box-shadow:0 0 14px var(--a);border-color:var(--a)}
+#g{display:block;width:100%;max-width:470px;aspect-ratio:1;margin:auto;touch-action:pan-y;cursor:grab}
+#gl{text-align:center;margin:8px 0 0;font-size:13px;color:var(--b)}
+#ls{max-height:62vh;overflow:auto;padding-right:4px}
+.c{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:10px 12px;margin:0 0 8px;color:var(--tx);font:inherit;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.18);border-radius:12px;cursor:pointer;animation:in .5s both;animation-delay:calc(var(--i)*45ms);transition:.2s}
+.c:hover{border-color:var(--a);transform:translateX(4px)}
+.c.on{border-color:var(--a);box-shadow:0 0 18px -2px var(--a),inset 0 0 18px -8px var(--a)}
+.c .f{font-size:26px}.c .m{flex:1;min-width:0}
+.c b{display:block;font-weight:400;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.c small{color:var(--b);font-size:12px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.c i{font-style:normal;color:var(--a)}
+.em{color:var(--b);text-align:center;padding:20px 0}
+.pl{position:fixed;left:0;right:0;bottom:0;z-index:9;display:grid;grid-template-columns:auto 1fr auto auto;gap:14px;align-items:center;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(10,0,25,.86);backdrop-filter:blur(14px);border-top:1px solid var(--a);box-shadow:0 -6px 30px -8px var(--a)}
+.inf{min-width:0}.inf b{display:block;font:500 15px Orbitron,system-ui,sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inf small{color:var(--b);font-size:12px}
+.bt{display:flex;gap:8px;align-items:center}
+.bt button{font-size:16px;width:40px;height:40px;border-radius:50%;color:var(--tx);background:rgba(0,0,0,.4);border:1px solid var(--b);cursor:pointer;transition:.2s}
+.bt button:hover{box-shadow:0 0 14px var(--b)}
+.bt .big{width:54px;height:54px;font-size:20px;background:var(--a);color:#000;border-color:var(--a);box-shadow:0 0 20px var(--a)}
+#vo{width:100px;accent-color:var(--a)}
+.eq{display:flex;gap:3px;align-items:flex-end;height:36px}
+.eq i{width:4px;height:100%;background:linear-gradient(var(--a),var(--b));border-radius:2px;transform-origin:bottom;transform:scaleY(.12);animation:eq .8s ease-in-out infinite alternate;animation-play-state:paused}
+.pl.on .eq i{animation-play-state:running}
+@keyframes eq{to{transform:scaleY(1)}}
+@media(max-width:680px){.pl{grid-template-columns:1fr auto}.eq,#vo{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bg"><div class="stars"></div><div class="sun"></div><div class="fl"></div></div>
+<main class="w">
+<header><h1>NEON WAVES</h1><p>rádios do mundo · sintonize a noite</p></header>
+<section class="p"><h2>Temas</h2><div id="th" class="chips" style="margin:0"></div></section>
+<div class="cols">
+<section class="p globe"><h2>Globo</h2><canvas id="g" aria-label="Globo interativo"></canvas><p id="gl">Arraste para girar · toque num ponto</p></section>
+<section class="p"><h2>Rádios<small id="bd"></small></h2>
+<div class="ctl"><input id="q" type="search" placeholder="Buscar rádio ou gênero…" aria-label="Buscar"><select id="cs" aria-label="País"></select></div>
+<div id="gn" class="chips"></div><div id="ls"></div></section>
+</div></main>
+<div class="pl" id="pl"><div class="eq" id="eq"></div>
+<div class="inf"><b id="pn">Escolha uma rádio</b><small id="ps">— sem sinal —</small></div>
+<div class="bt"><button id="pv" aria-label="Anterior">⏮</button><button id="pp" class="big" aria-label="Tocar/Pausar">▶</button><button id="nx" aria-label="Próxima">⏭</button><button id="rd" aria-label="Aleatória">🎲</button></div>
+<input id="vo" type="range" min="0" max="1" step=".01" value=".8" aria-label="Volume"></div>
+<audio id="au" preload="none"></audio>
+<script>
+const $=s=>document.querySelector(s),RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C=("BR|Brasil|-14|-51;AR|Argentina|-34|-64;CL|Chile|-33|-71;CO|Colômbia|4|-74;PE|Peru|-10|-76;UY|Uruguai|-33|-56;MX|México|23|-102;US|EUA|38|-97;CA|Canadá|56|-106;CU|Cuba|22|-79;JM|Jamaica|18|-77;PT|Portugal|39.5|-8;ES|Espanha|40|-4;FR|França|46|2;GB|Reino Unido|54|-2;IE|Irlanda|53|-8;DE|Alemanha|51|10;NL|Holanda|52|5;IT|Itália|42|12;CH|Suíça|47|8;SE|Suécia|62|15;NO|Noruega|61|9;FI|Finlândia|64|26;PL|Polônia|52|19;RU|Rússia|60|90;UA|Ucrânia|49|32;TR|Turquia|39|35;GR|Grécia|39|22;IL|Israel|31|35;SA|Arábia Saudita|24|45;EG|Egito|27|30;MA|Marrocos|32|-6;NG|Nigéria|9|8;KE|Quênia|0|38;ZA|África do Sul|-29|24;IN|Índia|21|78;CN|China|35|103;JP|Japão|36|138;KR|Coreia do Sul|36|128;TH|Tailândia|15|101;ID|Indonésia|-2|118;PH|Filipinas|13|122;AU|Austrália|-25|134;NZ|Nova Zelândia|-41|174").split(";").map(s=>{const a=s.split("|");return{cc:a[0],n:a[1],la:+a[2],lo:+a[3]}}).sort((a,b)=>a.n.localeCompare(b.n,'pt'));
+const CN=Object.fromEntries(C.map(c=>[c.cc,c.n]));
+const TH={synthwave:{n:'Synthwave',tag:'synthwave'},backrooms:{n:'Backrooms',tag:'ambient'},dreamcore:{n:'Dreamcore',tag:'vaporwave'},brasil:{n:'Brasil',cc:'BR'},cyberpunk:{n:'Cyberpunk',tag:'darksynth'},goblincore:{n:'Goblincore',tag:'folk'}};
+const GN=['synthwave','electronic','ambient','vaporwave','rock','pop','jazz','classical','hip hop','reggae','folk','latin'];
+const S=("Groove Salad|US|ambient downtempo chillout|groovesalad;Space Station Soma|US|electronic ambient space|spacestation;Deep Space One|US|ambient drone space|deepspaceone;Drone Zone|US|ambient drone|dronezone;Vaporwaves|US|vaporwave synthwave dream|vaporwaves;Synphaera|US|ambient dream electronic|synphaera;DEF CON Radio|US|darksynth industrial cyberpunk electronic|defcon;Secret Agent|US|lounge jazz|secretagent;Underground 80s|US|80s synthpop retro pop|u80s;Folk Forward|US|folk acoustic|folkfwd;Boot Liquor|US|country folk americana|bootliquor;Heavyweight Reggae|US|reggae|reggae;Metal Detector|US|metal rock|metal").split(";").map(s=>{const a=s.split("|");return{n:a[0]+' (SomaFM)',cc:a[1],t:a[2],u:`https://ice1.somafm.com/${a[3]}-128-mp3`}})
+.concat([["Nightride FM","synthwave outrun retro","nightride"],["Chillsynth FM","synthwave chillout ambient","chillsynth"],["Darksynth FM","darksynth cyberpunk industrial","darksynth"],["Datawave FM","synthwave vaporwave electronic","datawave"]].map(a=>({n:a[0],cc:'XX',t:a[1],u:`https://stream.nightride.fm/${a[2]}.mp3`})),
+[{n:'Radio Paradise',cc:'US',t:'rock eclectic pop',u:'https://stream.radioparadise.com/mp3-128'},{n:'FIP',cc:'FR',t:'eclectic jazz world',u:'https://icecast.radiofrance.fr/fip-midfi.mp3'},{n:'NTS Radio 1',cc:'GB',t:'eclectic electronic',u:'https://stream-relay-geo.ntslive.net/stream'},{n:'LISTEN.moe',cc:'JP',t:'jpop anime',u:'https://listen.moe/stream'},{n:'LISTEN.moe K-Pop',cc:'KR',t:'kpop pop',u:'https://listen.moe/kpop/stream'}]);
+const st={cc:'',tag:'',q:'',list:[],now:null,live:true,th:'synthwave'};
+const fl=cc=>cc&&cc!='XX'?String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt())):'🌐';
+async function api(){const p=new URLSearchParams({limit:60,hidebroken:true,order:'clickcount',reverse:true,is_https:true});
+if(st.q)p.set('name',st.q);if(st.tag)p.set('tag',st.tag);if(st.cc)p.set('countrycode',st.cc);
+for(const h of['de1','nl1','at1']){try{const ac=new AbortController(),t=setTimeout(()=>ac.abort(),6000);
+const r=await fetch(`https://${h}.api.radio-browser.info/json/stations/search?`+p,{signal:ac.signal});clearTimeout(t);
+const j=await r.json();return j.map(s=>({n:s.name.trim(),cc:s.countrycode,t:(s.tags||'').replace(/,/g,' '),u:s.url_resolved})).filter(s=>s.n&&s.u&&s.u.startsWith('https'))}catch(e){}}
+throw 0}
+function local(){const q=st.q.toLowerCase();return S.filter(s=>(!st.cc||s.cc==st.cc)&&(!st.tag||s.t.includes(st.tag))&&(!q||(s.n+' '+s.t).toLowerCase().includes(q)))}
+async function load(){$('#ls').innerHTML='<p class=em>Sintonizando…</p>';let r;
+if(st.live){try{r=await api()}catch(e){st.live=false}}
+if(!st.live)r=local();st.list=r;$('#bd').textContent=st.live?'● ao vivo · Radio Browser':'◌ modo offline · lista curada';render()}
+function render(){const l=$('#ls');if(!st.list.length){l.innerHTML='<p class=em>Nenhuma rádio encontrada. Tente outro filtro.</p>';return}
+l.innerHTML=st.list.map((s,i)=>`<button class="c" data-i="${i}" style="--i:${Math.min(i,14)}"><span class=f>${fl(s.cc)}</span><span class=m><b>${esc(s.n)}</b><small>${esc((CN[s.cc]||'Internacional')+' · '+(s.t||'').split(/[ ,]+/).filter(Boolean).slice(0,3).join(' · '))}</small></span><i>▶</i></button>`).join('');mark()}
+function mark(){document.querySelectorAll('.c').forEach(b=>b.classList.toggle('on',!!st.now&&st.list[b.dataset.i]&&st.list[b.dataset.i].u==st.now.u))}
+const au=$('#au'),pl=$('#pl'),ps=$('#ps');
+function play(s){st.now=s;au.src=s.u;$('#pn').textContent=s.n;ps.textContent='Conectando…';au.play().catch(()=>{});mark()}
+function step(d){if(!st.list.length)return;let i=st.list.findIndex(s=>st.now&&s.u==st.now.u);play(st.list[(i+d+st.list.length)%st.list.length])}
+au.onplaying=()=>{ps.textContent='● AO VIVO · '+(CN[st.now.cc]||'Internacional');pl.classList.add('on');$('#pp').textContent='⏸'};
+au.onpause=()=>{pl.classList.remove('on');$('#pp').textContent='▶'};
+au.onwaiting=()=>ps.textContent='Buffering…';
+au.onerror=()=>{if(st.now){ps.textContent='Sinal indisponível — tente outra rádio';pl.classList.remove('on')}};
+$('#pp').onclick=()=>{if(!au.src)return step(1);au.paused?au.play().catch(()=>{}):au.pause()};
+$('#nx').onclick=()=>step(1);$('#pv').onclick=()=>step(-1);
+$('#rd').onclick=()=>st.list.length&&play(st.list[Math.random()*st.list.length|0]);
+$('#vo').oninput=e=>au.volume=e.target.value;au.volume=.8;
+$('#ls').onclick=e=>{const b=e.target.closest('.c');if(b)play(st.list[b.dataset.i])};
+$('#eq').innerHTML=Array.from({length:20},()=>`<i style="animation-delay:-${(Math.random()*.9).toFixed(2)}s;animation-duration:${(.45+Math.random()*.7).toFixed(2)}s"></i>`).join('');
+const cs=$('#cs'),q=$('#q');
+cs.innerHTML='<option value="">🌍 Todos os países</option>'+C.map(c=>`<option value="${c.cc}">${fl(c.cc)} ${c.n}</option>`).join('');
+function chips(){$('#gn').innerHTML=GN.map(g=>`<button class="${g==st.tag?'on':''}" data-g="${g}">${g}</button>`).join('');
+$('#th').innerHTML=Object.entries(TH).map(([k,t])=>`<button class="${k==st.th?'on':''}" data-k="${k}">${t.n}</button>`).join('')}
+$('#gn').onclick=e=>{const g=e.target.dataset.g;if(!g)return;st.tag=st.tag==g?'':g;st.th='';chips();load()};
+$('#th').onclick=e=>{const k=e.target.dataset.k;if(k)theme(k)};
+let dbt;q.oninput=()=>{clearTimeout(dbt);dbt=setTimeout(()=>{st.q=q.value.trim();load()},400)};
+cs.onchange=()=>sel(cs.value,1);
+const K={};function cols(){const s=getComputedStyle(document.documentElement);['a','b'].forEach(k=>K[k]=s.getPropertyValue('--'+k).trim())}
+function theme(k){const t=TH[k];document.documentElement.dataset.theme=k;st.th=k;st.tag=t.tag||'';st.cc=t.cc||'';st.q='';q.value='';cs.value=st.cc;cols();chips();focus(st.cc);load()}
+function focus(cc){const c=C.find(c=>c.cc==cc);tl=c?c.lo:null;$('#gl').textContent=c?fl(cc)+' '+c.n:'Arraste para girar · toque num ponto'}
+function sel(cc,fromSel){st.cc=cc;st.th='';cs.value=cc;focus(cc);chips();load()}
+const cv=$('#g'),x=cv.getContext('2d');let W,R,lam=-50,ph=18,tl=null,dn=0,lx=0,mv=0,dots=[];
+function fit(){const d=devicePixelRatio||1;W=cv.clientWidth;cv.width=cv.height=W*d;x.setTransform(d,0,0,d,0,0);R=W*.43}
+addEventListener('resize',fit);
+function pr(la,lo){const a=la*Math.PI/180,b=(lo-lam)*Math.PI/180,p=ph*Math.PI/180;return{x:W/2+R*Math.cos(a)*Math.sin(b),y:W/2-R*(Math.cos(p)*Math.sin(a)-Math.sin(p)*Math.cos(a)*Math.cos(b)),v:Math.sin(p)*Math.sin(a)+Math.cos(p)*Math.cos(a)*Math.cos(b)>0}}
+function path(n,f){x.beginPath();let on=0;for(let i=0;i<=n;i++){const p=pr(...f(i));if(p.v){on?x.lineTo(p.x,p.y):x.moveTo(p.x,p.y);on=1}else on=0}x.stroke()}
+function draw(t){x.clearRect(0,0,W,W);x.shadowBlur=0;
+const g=x.createRadialGradient(W*.4,W*.35,R*.1,W/2,W/2,R);g.addColorStop(0,'rgba(255,255,255,.1)');g.addColorStop(1,'rgba(0,0,0,.55)');
+x.beginPath();x.arc(W/2,W/2,R,0,7);x.fillStyle=g;x.fill();x.lineWidth=1.5;x.strokeStyle=K.b;x.shadowColor=K.b;x.shadowBlur=14;x.stroke();
+x.lineWidth=1;x.globalAlpha=.4;x.strokeStyle=K.a;x.shadowColor=K.a;x.shadowBlur=4;
+for(let lo=-180;lo<180;lo+=30)path(30,i=>[-90+i*6,lo]);for(let la=-60;la<=60;la+=30)path(60,i=>[la,-180+i*6]);
+x.globalAlpha=1;dots=[];
+for(const c of C){const p=pr(c.la,c.lo);if(!p.v)continue;dots.push({cc:c.cc,x:p.x,y:p.y});const on=c.cc==st.cc;
+x.fillStyle=x.shadowColor=on?K.a:K.b;x.shadowBlur=10;x.beginPath();x.arc(p.x,p.y,on?5.5:3.4,0,7);x.fill();
+if(on){x.globalAlpha=.6;x.strokeStyle=K.a;x.beginPath();x.arc(p.x,p.y,7+(t/60%12),0,7);x.stroke();x.globalAlpha=1}}}
+function loop(t){if(!dn){if(tl!=null){let d=((tl-lam+540)%360)-180;lam+=d*.08;if(Math.abs(d)<.3)tl=null}else if(!RM)lam+=.12}draw(t);requestAnimationFrame(loop)}
+cv.onpointerdown=e=>{dn=1;lx=e.clientX;mv=0;cv.setPointerCapture(e.pointerId)};
+cv.onpointermove=e=>{if(!dn)return;const d=e.clientX-lx;lx=e.clientX;mv+=Math.abs(d);lam-=d*.4;tl=null};
+cv.onpointerup=e=>{dn=0;if(mv>6)return;const r=cv.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;let best=null,bd=18;
+for(const d of dots){const m=Math.hypot(d.x-px,d.y-py);if(m<bd){bd=m;best=d}}if(best)sel(best.cc)};
+cv.onpointercancel=()=>dn=0;
+fit();theme('synthwave');requestAnimationFrame(loop);
+</script>
+</body>
+</html>
